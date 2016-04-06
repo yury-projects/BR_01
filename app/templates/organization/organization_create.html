@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block main_block %}
+<form action="" method="post" name="organization_create" class="form">
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+        {{ form.name.label }}
+        {{ form.name }}
+
+        {% for message in form.name.errors %}
+          <div class="flash">{{ message }}</div>
+        {% endfor %}
+
+        {% for message in get_flashed_messages() %}
+            <div class=flash>{{ message }}</div>
+        {% endfor %}
+
+    </div>
+
+    <p><button type="submit" class="btn btn-success">Submit</button></p>
+</form>
+{% endblock %}

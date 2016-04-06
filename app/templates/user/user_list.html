@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block main_block %}
+
+<table class="table">
+    <thead>
+      <tr>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Email</th>
+        <th>Organization</th>
+        <th>role</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for user in users %}
+        <tr>
+            <td>{{ user.first_name }}</td>
+            <td>{{ user.last_name }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.org_id }}</td>
+            <td>{{ user.role }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

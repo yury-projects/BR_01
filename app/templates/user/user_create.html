@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+{% block main_block %}
+<form action="" method="post" name="user_create" class="form">
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+        <p>
+            {{ form.email.label }}
+            {{ form.email }}
+
+            {% for message in form.email.errors %}
+                <div class="flash">{{ message }}</div>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.password.label }}
+            {{ form.password }}
+
+            {% for message in form.password.errors %}
+            <div class="flash">{{ message }}</div>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.confirm.label }}
+            {{ form.confirm }}
+
+            {% for message in form.confirm.errors %}
+            <div class="flash">{{ message }}</div>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.first_name.label }}
+            {{ form.first_name }}
+
+            {% for message in form.first_name.errors %}
+            <div class="flash">{{ message }}</div>
+            {% endfor %}
+        </p>
+
+        <p>
+            {{ form.last_name.label }}
+            {{ form.last_name }}
+
+            {% for message in form.last_name.errors %}
+            <div class="flash">{{ message }}</div>
+            {% endfor %}
+        </p>
+
+        <p>
+            {{ form.org_id.label }}
+            {{ form.org_id }}
+
+            {% for message in form.org_id.errors %}
+            <div class="flash">{{ message }}</div>
+            {% endfor %}
+        </p>
+
+        <p>
+            {{ form.role.label }}
+            {{ form.role }}
+
+            {% for message in form.role.errors %}
+            <div class="flash">{{ message }}</div>
+            {% endfor %}
+        </p>
+
+        {% for message in get_flashed_messages() %}
+        <div class=flash>{{ message }}</div>
+        {% endfor %}
+
+    <p><button type="submit" class="btn btn-success">Submit</button></p>
+    </div>
+</form>
+
+{% endblock %}
